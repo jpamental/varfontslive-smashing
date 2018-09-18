@@ -1,0 +1,19 @@
+/* Variable Fonts setup */
+/* wght: 300/700 (400) */
+/* opsz: 12/48 (12) */
+@font-face {
+  font-family: "Amstelvar 1.1 VF";
+  src: url("../fonts/AmstelvarAlpha-VF_v1.1.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  /* default: 400 */
+  font-stretch: 70% 100%;
+  /* default: 100 */
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Jost VF";
+  src: url("../fonts/jost-VF.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  /* default: 400 */
+  font-display: swap; }

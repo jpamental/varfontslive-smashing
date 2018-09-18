@@ -1,0 +1,707 @@
+:root {
+
+  /* Breakpoint variables */
+  --bp-small: 24.15;
+  --bp-medium: 43.75;
+  --bp-large: 60.25;
+  --bp-xlarge: 75;
+
+  /* initial values  */
+  --text-wght: 90;
+  --text-wdth: 100;
+  --text-opsz: 16;
+  
+  /* Paragraph variables */
+  --p-line-height-min: 1.15;
+  --p-line-height-max: 1.5;
+  --p-font-size-min: 1.0;
+  --p-font-size-max: 1.25;
+  --p-vf-wght: var(--text-wght);
+  --p-vf-wdth: var(--text-wdth);
+
+  /* H1 variables */
+  --h1-line-height-min: 1.05;
+  --h1-line-height-max: 1.1;
+  --h1-font-size-min: 2;
+  --h1-font-size-max: 4.5;
+  --h1-vf-wght-multiplier-s: 1.5;
+  --h1-vf-wght-multiplier-m: 1.625;
+  --h1-vf-wght-multiplier-l: 1.75;
+
+  /* H2 variables */
+  --h2-line-height-min: 1.15;
+  --h2-line-height-max: 1.25;
+  --h2-font-size-min: 1.75;
+  --h2-font-size-max: 2.5;
+  --h2-vf-wght-multiplier-s: 1.25;
+  --h2-vf-wght-multiplier-m: 1.5;
+  --h2-vf-wght-multiplier-l: 1.75;
+
+  /* H3 variables */
+  --h3-line-height-min: 1.15;
+  --h3-line-height-max: 1.25;
+  --h3-font-size-min: 1.75;
+  --h3-font-size-max: 2.5;
+  --h3-vf-wght-multiplier-s: .5;
+  --h3-vf-wght-multiplier-m: .5;
+  --h3-vf-wght-multiplier-l: .5;
+
+  /* Dropcap variables */
+  --dc-line-height-min: .9;
+  --dc-line-height-max: .95;
+  --dc-font-size-min: 2.7;
+  --dc-font-size-max: 5.25;
+
+  /* Blockquote variables */
+  --bq-line-height-min: 1.1;
+  --bq-line-height-max: 1.1;
+  --bq-font-size-min: 2.7;
+  --bq-font-size-max: 5;
+  
+  --color-background: #fbfbf6;
+  --color-text: #3c3d31;
+  --color-text-light: #9c9d91;
+  --color-device-frame: #d1d1d1;
+}
+
+.italic,
+i,
+em {
+
+}
+
+b,
+strong {
+  --text-wght: 150;
+}
+
+.clear {
+  clear: both;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* elements */
+html {
+  background-color: var(--color-background);
+  color: #3c3d31;
+  font-size: 100%;
+}
+
+body {
+  font-family: "Roslindale VF";
+  font-weight: normal;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, p {
+  --font-size: 1rem;
+  --font-stretch: 100%;
+  --font-weight: 400;
+  --font-opsz: 20;
+  --y-position: 0vh;
+  --x-position: 0vw;
+  font-family: "Roslindale VF";
+  font-size: var(--font-size);
+  font-stretch: var(--font-width);
+  font-weight: var(--font-weight);
+  font-variation-settings: 
+    'opsz' var(--font-opsz);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: var(--y-position);
+  left: var(--x-position);
+}
+
+span {
+  --font-weight: 400;
+  --font-opsz: 20;
+  --duration: 1s;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  font-variation-settings: 
+    'opsz' var(--font-opsz);
+  transition: all var(--duration) ease-in-out;
+}
+
+h1 {
+  --font-size: 4rem;
+  --font-opsz: 48;
+  --font-weight: 700;
+  line-height: 1;
+  word-break: break-all;
+}
+
+h2 {
+  --font-size: 2.5rem;
+  --font-opsz: 40;
+  --font-weight: 600;
+}
+
+h3 {
+  --font-size: 2.5rem;
+  --font-opsz: 40;
+  --font-weight: 600;
+}
+
+h4 {
+  --font-size: 2.5rem;
+  --font-opsz: 40;
+  --font-weight: 600;
+}
+
+p {
+  --font-size: 1.25rem;
+  --font-opsz: 20;
+  --font-weight: 350;
+  color: #3c3d31;
+  width: 40em;
+}
+
+/* layout */
+.stage {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.frame-controls {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  text-align: right;
+  width: 15rem;
+  z-index: 20;
+}
+
+/* components */
+.main-headline {
+  --font-size: 17.75vw;
+  --y-position: 5vh;
+  --x-position: 2.25vw;
+  --duration: 2s;
+  width: 99vw;
+  transition: all var(--duration) ease-in-out;
+}
+
+.main-headline-2 {
+  --font-size: 4.5vw;
+  --y-position: 15vh;
+  --x-position: 2.5vw;
+  --font-weight: 120;
+  --font-width: 75%;
+  --duration: 1s;
+  font-family: "Cera Pro VF";
+  width: 99vw;
+  transition: all var(--duration) ease-in-out;
+}
+
+.main-headline-3 {
+  --font-size: 4.5vw;
+  --y-position: auto;
+  --x-position: auto;
+  --font-weight: 750;
+  --font-width: 80%;
+  --duration: 1s;
+  font-family: "Amstelvar 1.1 VF";
+  width: auto;
+  position: relative;
+  transition: all var(--duration) ease-in-out;
+  word-break: normal;
+}
+
+.first-subhead {
+  --font-size: 6vw;
+  --y-position: 36vh;
+  --x-position: 6.5vw;
+}
+
+.second-subhead {
+  &-1 {
+    --y-position: 47vh;
+    --x-position: 6.5vw;
+    --font-size: 6.5vw;
+    --font-weight: 700;
+    --font-opsz: 48;
+    --duration: 3s;
+    opacity: 0;
+    transition: all var(--duration) ease-in-out;
+  }
+  &-2 {
+    --y-position: 58vh;
+    --x-position: 6.5vw;
+    --font-size: 7.5vw;
+    --font-weight: 300;
+    --font-opsz: 48;
+    --duration: 4s;
+    opacity: 0;
+    transition: all var(--duration) ease-in-out;
+  }
+  &-3 {
+    --y-position: 72vh;
+    --x-position: 6.5vw;
+    --font-size: 5vw;
+    --font-weight: 700;
+    --font-opsz: 12;
+    --duration: 5s;
+    opacity: 0;
+    transition: all var(--duration) ease-in-out;
+  }
+  &-4 {
+    --y-position: 83vh;
+    --x-position: 6.5vw;
+    --font-size: 4.5vw;
+    --font-weight: 300;
+    --font-opsz: 12;
+    --duration: 6s;
+    opacity: 0;
+    transition: all var(--duration) ease-in-out;
+  }
+}
+
+.byline {
+  --y-position: 74vh;
+  --x-position: 6.5vw;
+  --font-weight-start: 550;
+  --font-weight-final: 300;
+  --font-size: 4vw;
+  font-weight: var(--font-weight-start);
+  letter-spacing: 0;
+  opacity: 1;
+}
+
+.colophon {
+  --y-position: 84vh;
+  --x-position: 6.5vw;
+  --font-weight-start: 350;
+  --font-weight-final: 300;
+  font-size: 3.5vw;
+  font-weight: var(--font-weight-start);
+}
+
+.body-text {
+  --y-position: 120vh;
+  --x-position: 6.5vw;
+  --duration: 2s;
+  position: absolute;
+  top: var(--y-position);
+  left: var(--x-position);
+  width: 40em;
+  transition: all var(--duration) ease-in-out;
+  z-index: 2;
+}
+
+.body-text-2 {
+  --y-position: 25vh;
+  --x-position: 2.5vw;
+  --font-size: 1rem;
+  --font-weight: 80;
+  --font-width: 100%;
+  --duration: 1s;
+  font-family: "Cera Pro VF";
+  line-height: 1.5;
+  position: absolute;
+  top: var(--y-position);
+  left: var(--x-position);
+  width: 25vw;
+  transition: all var(--duration) ease-in-out;
+  z-index: 2;
+}
+
+.body-text-3 {
+  --y-position: auto;
+  --x-position: auto;
+  --font-size: 1rem;
+  --font-weight: 380;
+  --font-width: 100%;
+  --duration: 1s;
+  font-family: "Amstelvar 1.1 VF";
+  line-height: 1.5;
+  position: relative;
+  transition: all var(--duration) ease-in-out;
+  width: auto;
+}
+
+.device-frame {
+  --frame-width: 99vw;
+  --frame-height: 96vh;
+  --y-position: 2vh;
+  --x-position: 0.5vw;
+  --duration: 3s;
+  border: solid 1px var(--color-background);
+  border-radius: 2em;
+  width: var(--frame-width);
+  height: var(--frame-height);
+  position: absolute;
+  top: var(--y-position);
+  left: var(--x-position);
+  z-index: 1;
+  transition: all var(--duration) ease-in-out;
+}
+
+.device-frame-2 {
+  --frame-width: 30vw;
+  --frame-height: 85vh;
+  --y-position: 2vh;
+  --x-position: 105vw;
+  --duration: 3s;
+  border: solid 1px var(--color-background);
+  border-radius: 2em;
+  width: var(--frame-width);
+  height: var(--frame-height);
+  position: absolute;
+  top: var(--y-position);
+  left: var(--x-position);
+  z-index: 1;
+  transition: all var(--duration) ease-in-out;
+}
+
+.device-frame-3 {
+  --frame-width: 30vw;
+  --frame-height: 85vh;
+  --y-position: 2vh;
+  --x-position: 105vw;
+  --duration: 3s;
+  border: solid 1px var(--color-background);
+  border-radius: 2em;
+  width: var(--frame-width);
+  height: var(--frame-height);
+  padding: 15vh 2.5vw;
+  position: absolute;
+  top: var(--y-position);
+  left: var(--x-position);
+  z-index: 1;
+  transition: all var(--duration) ease-in-out;
+}
+
+.frame1 {
+  .byline {
+    --duration: 2s;
+    animation: fade-in var(--duration) 1;
+    will-change: transform;
+  }
+  .colophon {
+    --duration: 2.5s;
+    animation: fade-in var(--duration) 1;
+    will-change: transform;
+  }
+}
+
+.frame2 {
+  .byline {
+    --top-offset: 20vh;
+    --duration: 4s;
+    --letterspacing: 0.4em;
+    animation: fade-down-out var(--duration) 1;
+    opacity: 0;
+    width: 150vw;
+    will-change: transform;
+  }
+  .colophon {
+    --top-offset: 40vh;
+    --duration: 3.5s;
+    --letterspacing: 0.4em;
+    animation: fade-down-out var(--duration) 1;
+    opacity: 0;
+    will-change: transform;
+  }
+}
+
+.frame3 {
+  .first-subhead {
+    opacity: 0;
+    --duration: 3s;
+    animation: fade-out var(--duration) 1;
+    will-change: transform;
+  }
+  .second-subhead-1 {
+    --font-size: 6vw;
+    --font-weight: 600;
+    --font-opsz: 40;
+    --y-position: 36vh;
+    --x-position: 6.5vw;
+    opacity: 1;
+  }
+  .second-subhead-2 {
+    --font-size: 6vw;
+    --font-weight: 600;
+    --font-opsz: 40;
+    --y-position: 36vh;
+    --x-position: 6.5vw;
+    opacity: 1;
+  }
+  .second-subhead-3 {
+    --font-size: 6vw;
+    --font-weight: 600;
+    --font-opsz: 40;
+    --y-position: 36vh;
+    --x-position: 6.5vw;
+    opacity: 1;
+  }
+  .second-subhead-4 {
+    --font-size: 6vw;
+    --font-weight: 600;
+    --font-opsz: 40;
+    --y-position: 36vh;
+    --x-position: 6.5vw;
+    opacity: 1;
+  }
+}
+
+.frame4 {
+  .second-subhead-1 {
+    opacity: 0;
+    --duration: 1s;
+    animation: fade-out var(--duration) 1;
+    will-change: transform;
+  }
+  .second-subhead-2 {
+    opacity: 0;
+    --duration: 1s;
+    animation: fade-out var(--duration) 1;
+    will-change: transform;
+  }
+  .second-subhead-3 {
+    opacity: 0;
+    --duration: 1s;
+    animation: fade-out var(--duration) 1;
+    will-change: transform;
+  }
+  .second-subhead-4 {
+    opacity: 0;
+    --duration: 1s;
+    animation: fade-out var(--duration) 1;
+    will-change: transform;
+  }
+}
+
+.frame5 {
+  .main-headline {
+    --font-size: 7vw;
+    --y-position: 8.5vh;
+    --x-position: 3.5vw;
+    width: 25vw;
+  }
+  .device-frame {
+    --frame-width: 30vw;
+    --frame-height: 92vh;
+    --x-position: 1vw;
+    border-color: var(--color-device-frame);
+  }
+}
+
+.frame6 {
+  .main-headline {
+    --font-size: 7vw;
+    --font-weight: 500;
+    --y-position: 8.5vh;
+    --x-position: 5.5vw;
+    width: 65vw;
+  }
+  .device-frame {
+    --frame-width: 70vw;
+    --frame-height: 55vh;
+    --x-position: 1vw;
+    --duration: 1s;
+  }
+  .body-text {
+    width: 400em;
+    letter-spacing: 1em;
+    line-height: 5;
+  }
+}
+
+.frame7 {
+  .main-headline {
+    --font-size: 11vw;
+    --font-weight: 300;
+    --y-position: 14.5vh;
+    --x-position: 10vw;
+    width: 99vw;
+  }
+  .device-frame {
+    --frame-width: 99vw;
+    --frame-height: 96vh;
+    --y-position: 2vh;
+    --x-position: 0.5vw;
+    border-color: var(--color-background);
+  }
+  .body-text {
+    --y-position: 38vh;
+    --x-position: 10vw;
+    --font-size: 2vw;
+    --font-opsz: 12;
+    --duration: 5s;
+    letter-spacing: normal;
+    line-height: 1.5;
+    width: 40em;
+  }
+}
+
+.frame8 {
+  .body-text {
+    --duration: 1s;
+    color: var(--color-text-light);
+  }
+  .frame8-span {
+    --font-weight: 650;
+    color: var(--color-text);
+  }
+}
+
+.frame9 {
+  .main-headline {
+    --duration: 6s;
+    --font-weight: 500;
+  }
+  .body-text {
+    --duration: 1s;
+    color: var(--color-text-light);
+  }
+  .frame8-span {
+    --font-weight: inherit;
+    color: var(--color-text-light);
+  }
+  .frame9-span {
+    --font-weight: 650;
+    color: var(--color-text);
+  }
+  .frame11-span {
+    --font-weight: inherit;
+    color: var(--color-text-light);
+  }
+}
+
+.frame10 {
+  .frame8-span {
+    color: var(--color-text-light);
+  }
+  .frame9-span {
+    --font-weight: inherit;
+    color: var(--color-text-light);
+  }
+  .frame11-span {
+    --font-weight: 650;
+    color: var(--color-text);
+  }
+}
+
+.frame11 {
+  .frame8-span {
+    --font-weight: inherit;
+    color: var(--color-text);
+  }
+  .frame9-span {
+    --font-weight: inherit;
+    color: var(--color-text);
+  }
+  .frame11-span {
+    --font-weight: inherit;
+    color: var(--color-text);
+  }
+  .main-headline {
+    --y-position: 15vh;
+    --x-position: 2.5vw;
+    --font-size: 4.5vw;
+    --font-weight: 500;
+    --duration: 1s;
+  }
+  .body-text {
+    --y-position: 25vh;
+    --x-position: 2.5vw;
+    --font-size: 1rem;
+    --duration: 1.5s;
+    color: var(--color-text);
+    width: 25vw;
+  }
+  .device-frame {
+    --x-position: 35vw;
+    --duration: 2s;
+    border-color: var(--color-device-frame);
+    width: 30vw;
+    height: 85vh;
+  }
+}
+
+.frame12 {
+  .device-frame {
+    --x-position: 2.5vw;
+  }
+  .device-frame-2 {
+    --x-position: 35vw;
+    border-color: var(--color-device-frame);
+  }
+}
+
+.frame13 {
+  .body-text-2 {
+    --font-width: 85%;
+  }
+}
+
+.frame14 {
+  .device-frame-3 {
+    --x-position: 67.5vw;
+    border-color: var(--color-device-frame);
+  }
+}
+
+@keyframes fade-up-in {
+  from {
+    font-weight: var(--font-weight-start);
+    letter-spacing: var(--letterspacing);
+    top: calc( var(--y-position) + var(--top-offset) );
+    opacity: 0;
+  }
+  to {
+    font-weight: var(--font-weight-final);
+    letter-spacing: 0;
+    top: calc( var(--y-position) + 0vh );
+    opacity: 1;
+  }
+}
+
+@keyframes fade-down-out {
+  from {
+    font-weight: var(--font-weight-start);
+    letter-spacing: 0;
+    top: calc( var(--y-position) + 0vh );
+    opacity: 1;
+  }
+  to {
+    font-weight: var(--font-weight-final);
+    letter-spacing: var(--letterspacing);
+    top: calc( var(--y-position) + var(--top-offset) );
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
